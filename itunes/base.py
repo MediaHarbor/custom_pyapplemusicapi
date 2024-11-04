@@ -237,7 +237,7 @@ class Album(Resource):
         self.url = json.get('collectionViewUrl', None)
         self.amg_id = json.get('amgAlbumId', None)
 
-        self.price = round(json['collectionPrice'] or 0, 4)
+        self.price = round(json.get('collectionPrice', 0), 4)
         self.price_currency = json['currency']
         self.track_count = json['trackCount']
         self.copyright = json.get('copyright', None)
